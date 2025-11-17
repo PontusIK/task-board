@@ -2,13 +2,17 @@ package com.example.demo;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Service {
+    private final Repo repo;
+    
+    @Autowired
     public Service(Repo repo) {
-        //TODO Auto-generated constructor stub
+        this.repo = repo;
     }
 
     public List<TaskList> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return repo.findAll();
     }
 }
