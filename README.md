@@ -14,7 +14,7 @@ Spring boot task-board
 1. fetch source code:\
     Clone this repository with git or download as zip and extract.
 
-2. build:
+2. build:\
     Linux/MacOS:
     ```
     gradlew build
