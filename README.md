@@ -17,7 +17,7 @@ Spring boot task-board
 2. build:\
     Linux/MacOS:
     ```
-    gradlew build
+    ./gradlew build
     ```
 
     Windows:
