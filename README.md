@@ -11,7 +11,7 @@ Spring boot task-board
 
 ### Build
 
-1. fetch source code:
+1. fetch source code:\
     Clone this repository with git or download as zip and extract
 
 2. build:
