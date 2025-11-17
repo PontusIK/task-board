@@ -10,6 +10,15 @@ public class TaskList {
     private String name;
     private List<Task> tasks;
 
+    public TaskList setId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getId() {
+        return id;
+    }
+    
     private static class Task {
         private String id;
         private String name;

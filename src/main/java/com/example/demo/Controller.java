@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping()
 public class Controller {
     private final ListService service;
 
@@ -19,7 +19,7 @@ public class Controller {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<TaskList>> getAll() {
         List<TaskList> lists = service.findAll();
         return new ResponseEntity<>(lists, HttpStatus.OK);

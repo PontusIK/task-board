@@ -17,4 +17,9 @@ public class ListService {
     public List<TaskList> findAll() {
         return repo.findAll();
     }
+
+    public TaskList createList(TaskList taskList) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createList'");
+    }
 }

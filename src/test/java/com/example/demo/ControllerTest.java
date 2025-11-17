@@ -8,21 +8,24 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatusCode;
 
-class ServiceTest {
+class ControllerTest {
     Repo repo;
-    ListService service;
+    Controller controller;
 
     @BeforeEach
     void setup() {
         repo = mock(Repo.class);
-        service = new ListService(repo);
+        ListService service = new ListService(repo);
+        controller = new Controller(service);
     }
 
     @Test
-    void findAllHappy() {
+    void findAll() {
         when(repo.findAll()).thenReturn(List.of(new TaskList()));
-        List<TaskList> result = service.findAll();
-        assertEquals(1, result.size());
+        var result = controller.getAll();
+        assertEquals(HttpStatusCode.valueOf(200), result.getStatusCode());
+        assertEquals(1, result.getBody().size());
     }
 }
