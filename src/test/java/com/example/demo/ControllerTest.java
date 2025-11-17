@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -27,5 +28,17 @@ class ControllerTest {
         var result = controller.getAll();
         assertEquals(HttpStatusCode.valueOf(200), result.getStatusCode());
         assertEquals(1, result.getBody().size());
+    }
+
+    @Test
+    void createListSucess() {
+        when(repo.save(any(TaskList.class))).thenAnswer(invocation -> {
+            TaskList list = invocation.getArgument(0);
+            return list.setId("1");
+        });
+
+        var result = controller.createList(new TaskList());
+        assertEquals(HttpStatusCode.valueOf(200), result.getStatusCode());
+        assertEquals("1", result.getBody().getId());
     }
 }
