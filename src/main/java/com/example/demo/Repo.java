@@ -1,5 +1,5 @@
 package com.example.demo;
 
-public class Repo {
-    
-}
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface Repo extends MongoRepository<TaskList, String> {}
