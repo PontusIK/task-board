@@ -11,6 +11,11 @@ Spring boot task-board
 
 ### Build
 
+1. fetch source code:
+    Clone this repository with git or download as zip and extract
+
+2. build:
+
 Linux/MacOS:
 ```
 gradlew build
@@ -21,7 +26,7 @@ Windows:
 .\gradlew.bat build
 ```
 
-### start
+### Start
 
 with docker engine running:
 ```
