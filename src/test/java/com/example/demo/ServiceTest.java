@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
 
 class ServiceTest {
     Repo repo;
-    Service service;
+    ListService service;
 
     @BeforeEach
     void setup() {
         repo = mock(Repo.class);
-        service = new Service(repo);
+        service = new ListService(repo);
     }
 
     @Test

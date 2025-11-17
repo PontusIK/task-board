@@ -3,12 +3,14 @@ package com.example.demo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class Service {
+@Service
+public class ListService {
     private final Repo repo;
     
     @Autowired
-    public Service(Repo repo) {
+    public ListService(Repo repo) {
         this.repo = repo;
     }
 

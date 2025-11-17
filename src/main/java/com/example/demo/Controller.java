@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class Controller {
-    private final Service service;
+    private final ListService service;
 
     @Autowired
-    public Controller(Service service) {
+    public Controller(ListService service) {
         this.service = service;
     }
 
