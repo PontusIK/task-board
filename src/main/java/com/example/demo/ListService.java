@@ -19,7 +19,7 @@ public class ListService {
     }
 
     public TaskList createList(TaskList taskList) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createList'");
+        taskList = taskList.setId(null);
+        return repo.save(taskList);
     }
 }

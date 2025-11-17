@@ -29,7 +29,7 @@ public class Controller {
 
     @PostMapping("/new_list")
     public ResponseEntity<TaskList> createList(@RequestBody TaskList taskList) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createList'");
+        taskList = service.createList(taskList);
+        return new ResponseEntity<>(taskList, HttpStatus.OK);
     }
 }
